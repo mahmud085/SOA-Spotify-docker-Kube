@@ -27,7 +27,10 @@ router.get('/', function(req, res, next) {
 
           rest.get('http://search:8080/api/tracks/search?title=' + title + '&artist=' + artist).on('complete', function(data) {
             console.log('Title ID is ' + data["id"]);
-
+            if(data["id"] == undefined || data["id"] == "") {
+              data["id"] = '11dFghVXANMlKmJXsNCbNl';
+              console.log('data id ',data["id"]);
+            }
             rest.get('http://images:8080/api/covers/' + data["id"]).on('complete', function(data) {
               console.log('Cover image is ' + data["url"]);
               callback(null, data["url"]);

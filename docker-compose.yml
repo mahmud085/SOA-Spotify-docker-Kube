@@ -3,5 +3,10 @@ services:
   web:
     build: ./web
     restart: always
+    depends_on:
+      - "images"
     ports:
       - "8888:3000"
+  images:
+    build: ./images
+    restart: always
