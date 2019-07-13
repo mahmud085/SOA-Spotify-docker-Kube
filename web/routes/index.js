@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
         rest.get('http://search:8080/api/artists/search?artist=' + artist).on('complete', function(data) {
           console.log('Artist ID is ' + data["id"]);
-          rest.get('http://charts:8080/api/charts/' + data["id"]).on('complete', function(data) {
+          rest.get('http://charts:8081/charts/' + data["id"]).on('complete', function(data) {
             console.log('Top songs are ' + JSON.stringify(data));
             callback(null, data);
           });

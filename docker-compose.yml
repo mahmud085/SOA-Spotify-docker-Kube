@@ -5,6 +5,7 @@ services:
     restart: always
     depends_on:
       - "images"
+      - "charts"
     ports:
       - "8888:3000"
   images:
