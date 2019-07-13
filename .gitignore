@@ -154,5 +154,3 @@ src/test/
 /chartsService/.nb-gradle/
 /imageService/.nb-gradle/
 /old_project/.nb-gradle/
-charts/build/libs/ImageApi.jar
-charts/dist/ImageApi.jar

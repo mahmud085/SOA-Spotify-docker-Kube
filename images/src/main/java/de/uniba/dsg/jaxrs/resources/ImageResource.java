@@ -31,31 +31,23 @@ public class ImageResource implements ImageApi {
         try {
 
             if(trackId == null || trackId.isEmpty()){
-                System.out.println("here 1");
                 throw new ClientRequestException(new ErrorMessage("Client error. Trackid is missing"));
             }
-            System.out.println("here 2");
             GetTrackRequest trackRequest = CustomSpotifyApi.getInstance().getTrack(trackId).build();
             Track track = trackRequest.execute();
 
             if (track == null || track.getAlbum() == null || track.getAlbum().getImages() == null) {
-                System.out.println("here 3");
                 throw new BadGateWayException(new ErrorMessage("Spotify error"));
             }
-            System.out.println("here 4");
            Image[] images =  track.getAlbum().getImages();
-           System.out.print("image length "+images.length);
             if (images.length <= 0) {
-                System.out.println("here 5");
                 throw new NoContentException(new ErrorMessage("No Image available"));
             }
-            System.out.println("here 6");
             return new Picture(images[0].getUrl());
             
         } catch (BadRequestException ex) {
             throw new ResourceNotFoundException(new ErrorMessage("Track not found"));
         } catch (IOException | SpotifyWebApiException ex) {
-            System.out.println("here 7 " );
             throw new RemoteApiException(new ErrorMessage(ex.getMessage()));
         }
     }
