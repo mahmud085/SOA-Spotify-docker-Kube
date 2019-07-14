@@ -6,14 +6,14 @@ metadata:
     kompose.version: 1.16.0 (0c01309)
   creationTimestamp: null
   labels:
-    io.kompose.service: web
-  name: web
+    io.kompose.service: charts
+  name: charts
 spec:
   ports:
-  - name: "3000"
-    port: 3000
-    targetPort: 3000
+  - name: "8081"
+    port: 8081
+    targetPort: 8081
   selector:
-    io.kompose.service: web
+    io.kompose.service: charts
 status:
   loadBalancer: {}
