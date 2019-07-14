@@ -1,0 +1,17 @@
+version: '2'
+services:
+  web:
+    image: ass2-project-template_web
+    ports:
+     - "3000:3000"
+    links:
+      - "images"
+      - "charts"
+  images:
+    image: ass2-project-template_images
+    ports:
+     - "8080:8080"
+  charts:
+    image: ass2-project-template_charts
+    ports:
+     - "8081:8081"
