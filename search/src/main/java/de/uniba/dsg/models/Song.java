@@ -4,10 +4,6 @@ import com.wrapper.spotify.model_objects.specification.Track;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-/**
- * TODO: Song attributes should be - title:String - artist:String (possibly
- * multiple artists concatenated with ", ") - duration:double (in seconds)
- */
 
 public class Song {
 

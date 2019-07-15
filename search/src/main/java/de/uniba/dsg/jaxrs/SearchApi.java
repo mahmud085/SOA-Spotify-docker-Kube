@@ -16,6 +16,7 @@ import javax.ws.rs.core.UriBuilder;
 import de.uniba.dsg.Configuration;
 import org.glassfish.jersey.jdkhttp.JdkHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
+
 @ApplicationPath("/")
 public class SearchApi extends Application{
     private static Properties properties = Configuration.loadProperties();

@@ -7,10 +7,6 @@ import javax.jws.WebService;
 import javax.ws.rs.core.Response;
 import javax.xml.bind.annotation.XmlElement;
 
-/**
- *
- * @author lleuschner
- */
 @WebService
 public interface TracksApi {
 
