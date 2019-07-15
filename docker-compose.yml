@@ -14,3 +14,6 @@ services:
   charts:
     build: ./charts
     restart: always
+  search:
+    build: ./search
+    restart: always
