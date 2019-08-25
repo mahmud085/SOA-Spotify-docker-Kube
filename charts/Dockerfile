@@ -1,7 +1,10 @@
 FROM openjdk:8-slim
-COPY /build/libs/ChartApi.jar /ChartApi.jar
+COPY . /PROJECT
+WORKDIR /PROJECT
+CMD gradlew shadowJar
+
 EXPOSE 8081
 
-CMD ["java", "-jar" , "/ChartApi.jar"]
+CMD ["java", "-jar" , "/PROJECT/build/libs/ChartApi.jar"]
 
 

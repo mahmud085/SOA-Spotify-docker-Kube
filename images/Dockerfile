@@ -1,7 +1,10 @@
 FROM openjdk:8-slim
-COPY /build/libs/ImageApi.jar /ImageApi.jar
+COPY . /PROJECT
+WORKDIR /PROJECT
+CMD gradlew shadowJar
+
 EXPOSE 8080
 
-CMD ["java", "-jar" , "/ImageApi.jar"]
+CMD ["java", "-jar" , "/PROJECT/build/libs/ImageApi.jar"]
 
 

@@ -1,7 +1,10 @@
 FROM openjdk:8-slim
-COPY /build/libs/SearchApi.jar /SearchApi.jar
+COPY . /PROJECT
+WORKDIR /PROJECT
+CMD gradlew shadowJar
+
 EXPOSE 8080
 
-CMD ["java", "-jar" , "/SearchApi.jar"]
+CMD ["java", "-jar" , "/PROJECT/build/libs/SearchApi.jar"]
 
 
